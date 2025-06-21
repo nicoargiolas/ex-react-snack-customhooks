@@ -1,10 +1,13 @@
 import useSwitch from "./hooks/useSwitch";
 import useDate from "./hooks/useDate";
+import useCustomPointer from "./hooks/useCustomPointer";
 
 function App() {
   const { isOn, toggle } = useSwitch();
 
   const currentDate = useDate();
+
+  const customPointer = useCustomPointer("🔥");
 
   return (
     <>
@@ -16,6 +19,11 @@ function App() {
       <div>
         <h1>Data e ora attuali:</h1>
         <p>{currentDate.toLocaleString()}</p>
+      </div>
+
+      <div>
+        <h1>Sposta il mouse per vedere il cursore personalizzato!</h1>
+        {customPointer}
       </div>
     </>
   )
