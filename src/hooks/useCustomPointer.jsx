@@ -17,12 +17,8 @@ export default function useCustomPointer(pointer) {
         }
         window.addEventListener('mousemove', updatePosition)
 
-        // Nasconde il cursore
-        document.body.style.cursor = "none";
-
         return () => {
             window.removeEventListener('mousemove', updatePosition);
-            document.body.style.cursor = "auto";
         }
     }, [])
 
@@ -36,6 +32,7 @@ export default function useCustomPointer(pointer) {
                     pointerEvents: 'none', // così non interferisce con click, hover ecc
                     transform: 'translate(-50%, -50%)', // per centrare
                     zIndex: 9999,
+                    cursor: 'none',
                 }}
             >
                 {pointer}
