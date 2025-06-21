@@ -11,12 +11,8 @@ import { useState } from "react";
 export default function useSwitch() {
     const [isOn, setIsOn] = useState(false);
     const toggle = () => {
-        if (isOn === true) {
-            setIsOn(false)
-        } else {
-            setIsOn(true)
-        }
+        setIsOn(curr => !curr) //inverte lo stato, dato che è un booleano si può fare così
     }
 
-    return { isOn, toggle }
+    return [isOn, toggle]
 }

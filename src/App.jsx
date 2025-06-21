@@ -3,7 +3,7 @@ import useDate from "./hooks/useDate";
 import useCustomPointer from "./hooks/useCustomPointer";
 
 function App() {
-  const { isOn, toggle } = useSwitch();
+  const [isOn, toggle] = useSwitch();
 
   const currentDate = useDate();
 
